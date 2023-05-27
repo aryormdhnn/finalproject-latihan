@@ -1,0 +1,18 @@
+
+.banner{
+    margin: 40px 24px;
+    background-color: rgb(27, 190, 117);
+    border-radius: 16px;
+}
+
+.banner-title{
+    font-size: 48px;
+    font-weight: 700;
+    color: #fff;
+}
+
+.banner-text{
+    font-size: 16px;
+    font-weight: 400;
+    color: #fff;
+}
