@@ -1,6 +1,8 @@
 import '../components/home.css';
 import ImageCover from '../assets/dokter-cover.png';
 import CardPenyakit from '../components/CardPenyakit';
+import Testimonial from '../components/testimonial';
+
 import umum from '../assets/penyakit/umum.png';
 import anak from '../assets/penyakit/Anak.png';
 import jiwa from '../assets/penyakit/jiwa.png';
@@ -13,6 +15,9 @@ import mata from '../assets/penyakit/mata.png';
 import ortopedi from '../assets/penyakit/ortopedi.png';
 import paru from '../assets/penyakit/paru.png';
 import tht from '../assets/penyakit/tht.png';
+import CardDokter from '../components/cardDokter';
+import Blog from '../components/blog';
+
 
 const CariDokter = () => {
   const penyakitData = [
@@ -71,7 +76,7 @@ const Home = () => {
   return (
     <>
       <div className="banner">
-        <div className="row">
+        <div className="row align-items-center">
           <div className="col-sm-6">
             <div className="banner-cover">
               <div className="card-body">
@@ -83,13 +88,17 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="col-sm-6">
-            <img src={ImageCover} alt="Gambar" width={437} height={390} />
+          <div className="col-sm-6 text-center">
+            <img src={ImageCover} alt="Gambar" width={500} height={437} />
           </div>
         </div>
       </div>
 
-      <CariDokter />
+    <CariDokter />
+    <CardDokter />
+    <Testimonial />
+    <Blog />
+
     </>
   );
 };

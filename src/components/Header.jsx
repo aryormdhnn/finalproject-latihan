@@ -1,28 +1,44 @@
-import { Navbar, Nav } from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Link } from 'react-router-dom';
+import { HiShoppingCart, HiSearch } from "react-icons/hi";
+
 import './Header.css';
 import Logo from '../assets/logo.png';
-import '../globalstyle.css'
+import '../globalstyle.css';
 
 export const Header = () => {
   return (
     <div>
-      <Navbar className="navbar-custom">
-        <Navbar.Brand as={Link} to="/" className="navbar-brand">
-          <img src={Logo} alt="Logo" className="logo-img" />
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto">
-            <Nav.Link as={Link} to="/" className="nav-link">Home</Nav.Link>
-            <Nav.Link as={Link} to="/cariDokter" className="nav-link">Cari Dokter</Nav.Link>
-            <Nav.Link as={Link} to="/artikel" className="nav-link">Artikel</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
+      <div className="navbar">
+        <div className="menubar">
+          <img src={Logo} alt="Not Found" className="logo" />
+          <div className="menu">
+            <NavLink exact to="/" className="nav-link" activeClassName="active">
+              Beranda
+            </NavLink>
+            <NavLink to="/cariDokter" className="nav-link" activeClassName="active">
+              Cari Dokter
+            </NavLink>
+            <NavLink to="/artikel" className="nav-link" activeClassName="active">
+              Artikel
+            </NavLink>
+            <NavLink to="/tokoObat" className="nav-link" activeClassName="active">
+              Toko Obat
+            </NavLink>
+          </div>
+        </div>
+        <div className="icons">
+          <HiSearch className="search-icon" />
+          <HiShoppingCart className="cart-icon" />
+          <div className="button-header">
+            <Button variant="outline-success">Daftar</Button>
+            <Button variant="success">Masuk</Button>
+          </div>
+        </div>
+      </div>
     </div>
-  )
-}
+  );
+};
 
 export default Header;
