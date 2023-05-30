@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './artikel.css';
 
-const Blog = () => {
+const Artikel = () => {
   const [articles, setArticles] = useState([]);
 
   useEffect(() => {
@@ -9,8 +9,8 @@ const Blog = () => {
       .then((response) => response.json())
       .then((data) => {
         const updatedArticles = data.slice(0, 3).map((article) => {
-          const truncatedText = article.text.split(' ').slice(0, 28).join(' ');
-          const ellipsis = article.text.split(' ').length > 28 ? '...' : '';
+          const truncatedText = article.text.split(' ').slice(0, 20).join(' ');
+          const ellipsis = article.text.split(' ').length > 20 ? '...' : '';
           return { ...article, text: truncatedText + ellipsis };
         });
         setArticles(updatedArticles);
@@ -39,7 +39,7 @@ const Blog = () => {
                     <h5 className="card-title">{article.title}</h5>
                     <p className="card-text">{article.text}</p>
                     <a href={article.link} className="btn btn-success">
-                      Go somewhere
+                      Lihat semuanya
                     </a>
                   </div>
                 </div>
@@ -52,4 +52,4 @@ const Blog = () => {
   );
 };
 
-export default Blog;
+export default Artikel;
