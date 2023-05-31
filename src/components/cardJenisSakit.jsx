@@ -36,7 +36,7 @@ const CardJenisSakit = () => {
         <div className="row">
           {cards.map((card, index) => (
             <div className="col-sm-2" key={index}>
-              <Link to={card.path} className="card-sakit">
+             <Link to={card.path} className="card-sakit custom-link">
                 <div className="card-body">
                   <img
                     src={card.image}
